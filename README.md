@@ -1,1 +1,1 @@
-# Naver-Movie-Review-Sentiment-Analysis
+# Yogiyo-Review-Sentiment-Analysis
