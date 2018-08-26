@@ -186,7 +186,7 @@ def yogiyo_crawling(location, category):
 
     return df
 
-# 14. 송파구 모든 관할구역(동) 크롤링 실행 함수
+# 14. 송파구 모든 행정구역(동)의 크롤링 실행 함수
 def start_songpagu_crawling(category):
 
     songpagu = ['가락동','거여동','마천동','문정동','방이동','삼전동',
@@ -201,7 +201,7 @@ def start_songpagu_crawling(category):
             print(e)
             pass
 
-# 15. 강남구 모든 관할구역(동) 크롤링 실행 함수
+# 15. 강남구 모든 행정구역(동)의 크롤링 실행 함수
 def start_gangnamgu_crawling(category):
 
     gangnamgu = ['역삼동','개포동','청담동','삼성동','대치동','신사동','논현동',
@@ -216,7 +216,7 @@ def start_gangnamgu_crawling(category):
             print(e)
             pass
 
-# 16. 서초구 모든 관할구역(동) 크롤링 실행 함수
+# 16. 서초구 모든 행정구역(동)의 크롤링 실행 함수
 def start_seochogu_crawling(category):
 
     seochogu = ['방배동','양재동','우면동','원지동','잠원동',
@@ -230,3 +230,13 @@ def start_seochogu_crawling(category):
             print('***** '+dong+' 에러 발생 *****')
             print(e)
             pass
+
+# 17. 크롤링 예시
+# 송파구 모든 행정구역의 '치킨'가게 리뷰를 크롤링하기
+start_songpagu_crawling('치킨')
+
+# 강남구 모든 행정구역의 '피자'가게 리뷰를 크롤링하기
+start_gangnamgu_crawling('피자')
+
+# 서초구 모든 행정구역의 '중국집'가게 리뷰를 크롤링하기
+start_seochogu_crawling('중국집')
