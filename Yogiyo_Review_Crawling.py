@@ -231,7 +231,7 @@ def start_seochogu_crawling(category):
             print(e)
             pass
 
-# 17. 크롤링 예시
+# 17. 크롤링 함수 실행 예시
 # 송파구 모든 행정구역의 '치킨'가게 리뷰를 크롤링하기
 start_songpagu_crawling('치킨')
 
