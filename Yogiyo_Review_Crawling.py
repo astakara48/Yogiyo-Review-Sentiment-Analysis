@@ -28,10 +28,11 @@ def set_location(location):
     time.sleep(2)
     print(location+'으로 위치 설정 완료!')
 
-# 2-1. 카테고리 페이지 Element Number Dictionary 정의
-food_dict = { '프랜차이즈':3, '치킨':4, '피자&양식':5, '중국집':6,
-              '한식':7, '일식&돈까스':8, '족발&보쌈':9,
-              '야식':10, '분식':11, '카페&디저트':12 }
+# 2-1. 요기요 카테고리 페이지의 Element Number Dictionary 정의
+food_dict = { '프랜차이즈':3, '치킨':4, '피자&양식':5,
+              '중국집':6, '한식':7, '일식&돈까스':8,
+              '족발&보쌈':9, '야식':10,
+              '분식':11, '카페&디저트':12 }
 
 # 2-2. 카테고리 페이지로 넘어가기
 def go_to_category(category):
@@ -232,11 +233,11 @@ def start_seochogu_crawling(category):
             pass
 
 # 17. 크롤링 함수 실행 예시
-# 송파구 모든 행정구역의 '치킨'가게 리뷰를 크롤링하기
+# 송파구 모든 행정구역(동)의 '치킨'가게 리뷰를 크롤링
 start_songpagu_crawling('치킨')
 
-# 강남구 모든 행정구역의 '피자'가게 리뷰를 크롤링하기
+# 강남구 모든 행정구역(동)의 '피자'가게 리뷰를 크롤링
 start_gangnamgu_crawling('피자')
 
-# 서초구 모든 행정구역의 '중국집'가게 리뷰를 크롤링하기
+# 서초구 모든 행정구역(동)의 '중국집'가게 리뷰를 크롤링
 start_seochogu_crawling('중국집')
