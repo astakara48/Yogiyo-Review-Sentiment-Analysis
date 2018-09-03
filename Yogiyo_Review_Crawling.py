@@ -220,8 +220,7 @@ def start_gangnamgu_crawling(category):
 # 16. 서초구 모든 행정구역(동)의 크롤링 실행 함수
 def start_seochogu_crawling(category):
 
-    seochogu = ['방배동','양재동','우면동','원지동','잠원동',
-                '반포동','서초동','내곡동','염곡동','신원동']
+    seochogu = ['방배동','양재동','우면동','원지동','잠원동','반포동','서초동','내곡동','염곡동','신원동']
 
     for dong in seochogu:
         try:
