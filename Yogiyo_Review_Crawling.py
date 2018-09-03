@@ -187,56 +187,39 @@ def yogiyo_crawling(location, category):
 
     return df
 
-# 14. 송파구 모든 행정구역(동)의 크롤링 실행 함수
-def start_songpagu_crawling(category):
+# 14. 강남 3구와 각 구의 모든 행정구역(동) 및 원하는 카테고리에 해당하는 음식점 리뷰 크롤링 실행 함수
+def start_yogiyo_crawling(gu, category):
+    dong_list = []
+    
+    if gu=='송파구':
+        dong_list = ['가락동','거여동','마천동','문정동','방이동','삼전동',
+                     '석촌동','송파동','오금동','오륜동','잠실동','장지동','풍납동']
+    elif gu=='강남구':
+        dong_list = ['역삼동','개포동','청담동','삼성동','대치동','신사동','논현동',
+                     '압구정동','세곡동','자곡동','율현동','일원동','수서동','도곡동']
+    elif gu=='서초구':
+        dong_list = ['방배동','양재동','우면동','원지동','잠원동','반포동','서초동','내곡동','염곡동','신원동']
 
-    songpagu = ['가락동','거여동','마천동','문정동','방이동','삼전동',
-                '석촌동','송파동','오금동','오륜동','잠실동','장지동','풍납동']
-
-    for dong in songpagu:
+    for dong in dong_list:
         try:
-            yogiyo = yogiyo_crawling('송파구 {}'.format(dong), category)
+            yogiyo = yogiyo_crawling('{} {}'.format(gu,dong), category)
             print(dong+' - '+category+', shape: '+str(yogiyo.shape)+'\n')
         except Exception as e:
             print('***** '+dong+' 에러 발생 *****')
             print(e)
             pass
 
-# 15. 강남구 모든 행정구역(동)의 크롤링 실행 함수
-def start_gangnamgu_crawling(category):
 
-    gangnamgu = ['역삼동','개포동','청담동','삼성동','대치동','신사동','논현동',
-                 '압구정동','세곡동','자곡동','율현동','일원동','수서동','도곡동']
 
-    for dong in gangnamgu:
-        try:
-            yogiyo = yogiyo_crawling('강남구 {}'.format(dong), category)
-            print(dong+' - '+category+', shape: '+str(yogiyo.shape)+'\n')
-        except Exception as e:
-            print('***** '+dong+' 에러 발생 *****')
-            print(e)
-            pass
 
-# 16. 서초구 모든 행정구역(동)의 크롤링 실행 함수
-def start_seochogu_crawling(category):
-
-    seochogu = ['방배동','양재동','우면동','원지동','잠원동','반포동','서초동','내곡동','염곡동','신원동']
-
-    for dong in seochogu:
-        try:
-            yogiyo = yogiyo_crawling('서초구 {}'.format(dong), category)
-            print(dong+' - '+category+', shape: '+str(yogiyo.shape)+'\n')
-        except Exception as e:
-            print('***** '+dong+' 에러 발생 *****')
-            print(e)
-            pass
-
-# 17. 크롤링 함수 실행 예시
+# 15. 크롤링 함수 실행 예시
 # 송파구 모든 행정구역(동)의 '치킨'가게 리뷰를 크롤링
-start_songpagu_crawling('치킨')
+start_yogiyo_crawling('송파구','치킨')
 
 # 강남구 모든 행정구역(동)의 '피자'가게 리뷰를 크롤링
-start_gangnamgu_crawling('피자')
+start_yogiyo_crawling('강남구','피자')
 
 # 서초구 모든 행정구역(동)의 '중국집'가게 리뷰를 크롤링
-start_seochogu_crawling('중국집')
+start_yogiyo_crawling('서초구','중국집')
+
+
